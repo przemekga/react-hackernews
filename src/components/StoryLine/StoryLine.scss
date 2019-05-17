@@ -1,0 +1,26 @@
+.storyLine {
+  display: flex;
+  align-items: center;
+  border-left: 3px solid #aaa;
+  margin-bottom: 0.5em;
+  box-shadow: 2px 2px 1px whitesmoke;
+  .storyTitle {
+    font-size: 1.6em;
+    margin: 0;
+    margin-bottom: 0.1em;
+  }
+  .score {
+    font-size: 1.8em;
+    opacity: 0.7;
+    padding: 0.2em;
+    margin-right: 0.5em;
+  }
+  .detailsBottomLine {
+    display: flex;
+    color: #bfbfbf;
+    font-size: 0.8em;
+  }
+  .author {
+    margin-right: 1em;
+  }
+}

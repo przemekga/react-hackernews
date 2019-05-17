@@ -1,0 +1,19 @@
+.tree {
+  border-left: 2px solid #aaa;
+  margin-left: 2em;
+  padding-left: 1em;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 1em;
+  box-shadow: 1px 1px 7px #dadada;
+  .author {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 1em;
+  }
+  .date {
+    display: inline-block;
+    font-size: 0.8em;
+    color: rgb(175, 175, 175);
+  }
+}
