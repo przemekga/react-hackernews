@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const CommentLine = ({ commentData, replies }) => {
   function timeConverter(UNIX_timestamp) {

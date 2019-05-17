@@ -5,7 +5,7 @@ import "./CommentTree.scss";
 
 const CommentTree = ({ commentData }) => {
   const nestedComments = commentData.children.map(comment => {
-    return <CommentTree commentData={comment} />;
+    return <CommentTree key={comment.id} commentData={comment} />;
   });
 
   return (

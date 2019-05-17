@@ -19,13 +19,16 @@ const Stories = ({ match }) => {
       case "new":
         fetchStories("https://hn.algolia.com/api/v1/search_by_date?tags=story");
         break;
+      case "top-today":
+        fetchStories("https://hn.algolia.com/api/v1/search?tags=front_page");
+        break;
       default:
         fetchStories("https://hn.algolia.com/api/v1/search?query=&tags=story");
         break;
     }
-  }, []);
+  }, [match.params.id]);
 
-  return <StoryList storiesData={storiesData} />;
+  return <StoryList key={storiesData.id} storiesData={storiesData} />;
 };
 
 export default Stories;
