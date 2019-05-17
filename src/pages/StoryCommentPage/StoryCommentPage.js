@@ -2,10 +2,12 @@ import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import CommentList from "../../components/CommentsList/CommentList";
 import StoryLine from "../../components/StoryLine/StoryLine";
+import Loader from "../../components/Loader/Loader";
 
 const StoryCommentPage = ({ match }) => {
   const [commentsData, setCommentsData] = useState([]);
   const [storyData, setStoryData] = useState({});
+  const [isLoading, toggleLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -13,13 +15,20 @@ const StoryCommentPage = ({ match }) => {
       .then(res => {
         setCommentsData(res.data.children);
         setStoryData(res.data);
+        toggleLoading(false);
       });
   }, []);
 
   return (
     <Fragment>
-      <StoryLine storyData={storyData} />
-      <CommentList comments={commentsData} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Fragment>
+          <StoryLine storyData={storyData} />
+          <CommentList comments={commentsData} />
+        </Fragment>
+      )}
     </Fragment>
   );
 };
