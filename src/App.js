@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Stories} />
           <Route path="/story/:id" component={StoryCommentPage} />
-          <Route path="/stories/:id" component={Stories} />
+          <Route path="/stories/:id/:page?" component={Stories} />
           <Route component={PageNotFound} />
         </Switch>
       </div>

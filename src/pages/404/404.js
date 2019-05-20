@@ -488,7 +488,7 @@ const PageNotFound = () => {
         </g>
       </svg>
 
-      <div class="message container">
+      <div className="message container">
         <h1>Ooops!</h1>
         <h2>Something went wrong...</h2>
       </div>

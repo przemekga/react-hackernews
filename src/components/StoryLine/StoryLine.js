@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./StoryLine.scss";
 
 const StoryLine = ({ storyData }) => {
-  console.log(storyData.num_comments);
   return (
     <div className="storyLine">
       <div className="score">{storyData.points}</div>
