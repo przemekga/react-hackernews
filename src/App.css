@@ -1,8 +1,15 @@
 nav {
   margin-bottom: 2em;
 }
-
+nav ul a.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 code {
   max-width: 100%;
   white-space: pre-line;
+}
+
+.App {
+  background-color: #f7f7f7;
+  min-height: 100vh;
 }

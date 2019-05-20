@@ -5,7 +5,7 @@ const StoryList = ({ storiesData }) => {
   return (
     <div>
       {storiesData.map(item => (
-        <StoryLine storyData={item} />
+        <StoryLine key={item.objectID} storyData={item} />
       ))}
     </div>
   );

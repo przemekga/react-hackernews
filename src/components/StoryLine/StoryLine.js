@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./StoryLine.scss";
 
 const StoryLine = ({ storyData }) => {
+  console.log(storyData.num_comments);
   return (
     <div className="storyLine">
       <div className="score">{storyData.points}</div>
@@ -12,11 +13,13 @@ const StoryLine = ({ storyData }) => {
         </h1>
         <div className="detailsBottomLine">
           <div className="author">Author: {storyData.author}</div>
-          <div className="comments">
-            <Link to={`/story/${storyData.objectID}`}>
-              Comments ({storyData.num_comments})
-            </Link>
-          </div>
+          {storyData.num_comments !== undefined ? (
+            <div className="comments">
+              <Link to={`/story/${storyData.objectID}`}>
+                Comments ({storyData.num_comments})
+              </Link>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

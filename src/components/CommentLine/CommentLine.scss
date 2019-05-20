@@ -1,0 +1,15 @@
+.comment {
+  .author {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 1em;
+  }
+  .date {
+    display: inline-block;
+    font-size: 0.8em;
+    color: rgb(175, 175, 175);
+  }
+  p {
+    padding-right: 10px;
+  }
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./CommentLine.scss";
+
 const CommentLine = ({ commentData, replies }) => {
   function timeConverter(UNIX_timestamp) {
     const a = new Date(UNIX_timestamp * 1000);
@@ -33,7 +35,7 @@ const CommentLine = ({ commentData, replies }) => {
   return (
     <div className="comment">
       <div className="commentDetails">
-        <div className="author">{commentData.author}</div>
+        <div className="author">{commentData.author || "[deleted]"}</div>
         <div className="date">{createdAt}</div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: commentData.text }} />

@@ -28,7 +28,7 @@ const Stories = ({ match }) => {
     }
   }, [match.params.id]);
 
-  return <StoryList key={storiesData.id} storiesData={storiesData} />;
+  return <StoryList storiesData={storiesData} />;
 };
 
 export default Stories;

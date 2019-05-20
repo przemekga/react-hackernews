@@ -17,7 +17,7 @@ const StoryCommentPage = ({ match }) => {
         setStoryData(res.data);
         toggleLoading(false);
       });
-  }, []);
+  }, [match.params.id]);
 
   return (
     <Fragment>
