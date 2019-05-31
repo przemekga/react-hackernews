@@ -52,7 +52,6 @@ const Stories = ({ history, location, match }) => {
 
   return (
     <Fragment>
-
       <StoryList storiesData={storiesData} />
       <Row>
         <Col s={12} className="center-align">

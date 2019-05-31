@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import { Route, Switch } from "react-router-dom";
 
 import Stories from "./pages/Stories/Stories";
+import User from "./pages/User/User";
 import StoryCommentPage from "./pages/StoryCommentPage/StoryCommentPage";
 import PageNotFound from "./pages/404/404";
 
@@ -17,7 +18,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Stories} />
           <Route path="/story/:id" component={StoryCommentPage} />
-          <Route path="/stories/:id/:page?" component={Stories} />
+          <Route path="/stories/:id" component={Stories} />
+          <Route path="/user/:id" component={User} />
           <Route component={PageNotFound} />
         </Switch>
       </div>

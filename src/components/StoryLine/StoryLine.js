@@ -11,7 +11,7 @@ const StoryLine = ({ storyData }) => {
           <a href={storyData.url}>{storyData.title}</a>
         </h1>
         <div className="detailsBottomLine">
-          <div className="author">Author: {storyData.author}</div>
+          <div className="author"><Link to={`/user/${storyData.author}`}>Author: {storyData.author}</Link></div>
           {storyData.num_comments !== undefined ? (
             <div className="comments">
               <Link to={`/story/${storyData.objectID}`}>
