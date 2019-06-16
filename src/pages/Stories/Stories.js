@@ -6,14 +6,18 @@ import axios from "axios";
 const Stories = ({ history, location, match }) => {
   const [storiesData, setStoriesData] = useState([]);
   const [page, setPage] = useState(0);
-  const [pagesAmount, setPagesAmount] = useState(1);
+  const [noMorePages, setNoMorePages] = useState(false);
 
   const fetchStories = url => {
     axios.get(url).then(res => {
+      if (!res.data.hits.length) {
+        setNoMorePages(true);
+      } else {
+        setNoMorePages(false);
+      }
       page > 0
         ? setStoriesData([...storiesData, ...res.data.hits])
         : setStoriesData(res.data.hits);
-      setPagesAmount(res.data.nbPages);
     });
   };
 
@@ -48,15 +52,18 @@ const Stories = ({ history, location, match }) => {
 
   useEffect(() => {
     storyRoutes();
+    history.listen(() => {
+      setPage(0);
+    })
   }, [match.params.id, page]);
+
 
   return (
     <Fragment>
-
       <StoryList storiesData={storiesData} />
       <Row>
         <Col s={12} className="center-align">
-          <Button onClick={() => loadMore(page + 1)}>Load more</Button>
+          {noMorePages ? <p>There is nothing more :(</p> : <Button onClick={() => loadMore(page + 1)}>Load more</Button>}
         </Col>
       </Row>
     </Fragment>

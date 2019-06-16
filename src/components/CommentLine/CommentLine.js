@@ -1,6 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "./CommentLine.scss";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  color: #444;
+  font-weight: bold;
+`;
 
 const CommentLine = ({ commentData, replies }) => {
   function timeConverter(UNIX_timestamp) {
@@ -35,7 +41,11 @@ const CommentLine = ({ commentData, replies }) => {
   return (
     <div className="comment">
       <div className="commentDetails">
-        <div className="author">{commentData.author || "[deleted]"}</div>
+        <div className="author">
+          <StyledLink to={`/user/${commentData.author}`}>
+            {commentData.author || "[deleted]"}
+          </StyledLink>
+        </div>
         <div className="date">{createdAt}</div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: commentData.text }} />

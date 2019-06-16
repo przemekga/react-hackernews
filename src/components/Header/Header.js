@@ -12,7 +12,7 @@ const Header = () => {
       <NavLink to="/stories/new">New</NavLink>
       <NavLink to="/stories/top-today">Top Today</NavLink>
     </Navbar>
-  );
+  ); 
 };
 
 export default Header;

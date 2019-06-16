@@ -14,12 +14,16 @@
     font-size: 1.8em;
     opacity: 0.7;
     padding: 0.2em;
-    margin-right: 0.5em;
+    margin: 0 0.2em;
+    min-width: 50px;
+    text-align: center;
   }
   .detailsBottomLine {
     display: flex;
-    color: #bfbfbf;
     font-size: 0.8em;
+    a {
+      color: #a7a7a7;
+    }
   }
   .author {
     margin-right: 1em;
